@@ -1,0 +1,39 @@
+2026-05-08 15:15:23 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-08 15:15:31 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-08 15:15:34 - INFO - Cambio de estado a: MOVIMIENTO
+2026-05-08 15:15:38 - INFO - Viaje terminado satisfactoriamente. Total: 0.07
+2026-05-08 15:15:38 - INFO - Historial actualizado con un total de 0.07€
+2026-05-08 21:10:19 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-08 21:11:11 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-08 21:11:25 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-08 21:11:35 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-08 21:11:38 - INFO - Cambio de estado a: MOVIMIENTO
+2026-05-08 21:11:44 - INFO - Cambio de estado a: PARADO
+2026-05-08 21:11:48 - INFO - Viaje terminado satisfactoriamente. Total: 0.16
+2026-05-08 21:11:48 - INFO - Historial actualizado con un total de 0.16€
+2026-05-08 21:24:50 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-08 21:24:59 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-08 21:25:03 - INFO - Cambio de estado a: MOVIMIENTO
+2026-05-08 21:25:07 - INFO - Viaje terminado satisfactoriamente. Total: 0.05
+2026-05-08 21:25:07 - INFO - Historial actualizado con un total de 0.05€
+2026-05-08 21:27:07 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-08 21:27:17 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-08 21:27:21 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-08 21:27:24 - INFO - Cambio de estado a: MOVIMIENTO
+2026-05-08 21:27:40 - INFO - Cambio de estado a: PARADO
+2026-05-08 21:27:51 - INFO - Viaje terminado satisfactoriamente. Total: 0.73
+2026-05-08 21:27:51 - INFO - Historial actualizado con un total de 0.73€
+2026-05-09 14:41:22 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-09 14:41:24 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-09 14:41:30 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-09 14:41:33 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-09 14:41:37 - WARNING - Intento de acción no válida: g
+2026-05-09 14:41:40 - INFO - Viaje terminado satisfactoriamente. Total: 0.00
+2026-05-09 14:41:40 - INFO - Historial actualizado con un total de 0.00€
+2026-05-09 14:41:47 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-09 14:44:45 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-09 14:44:54 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-09 14:45:09 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-09 14:45:10 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-09 14:45:12 - INFO - Viaje terminado satisfactoriamente. Total: 0.00
+2026-05-09 14:45:12 - INFO - Historial actualizado con un total de 0.00€
