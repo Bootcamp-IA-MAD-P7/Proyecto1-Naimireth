@@ -37,3 +37,25 @@
 2026-05-09 14:45:10 - INFO - Usuario seleccionó Iniciar Viaje.
 2026-05-09 14:45:12 - INFO - Viaje terminado satisfactoriamente. Total: 0.00
 2026-05-09 14:45:12 - INFO - Historial actualizado con un total de 0.00€
+2026-05-11 09:35:09 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-11 09:35:12 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-11 09:37:59 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-11 09:38:01 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-11 09:38:03 - INFO - Cambio de estado a: MOVIMIENTO
+2026-05-11 09:38:08 - INFO - Viaje terminado satisfactoriamente. Total: 0.09
+2026-05-11 09:38:08 - INFO - Historial actualizado con un total de 0.09€
+2026-05-11 10:31:54 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-11 10:32:18 - INFO - Rates updated: Stop=23.0, Move=56.0
+2026-05-11 10:32:24 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-11 10:32:26 - INFO - Cambio de estado a: MOVIMIENTO
+2026-05-11 10:32:31 - INFO - Viaje terminado satisfactoriamente. Total: 103.87
+2026-05-11 10:32:31 - INFO - Historial actualizado con un total de 103.87€
+2026-05-11 10:40:01 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-11 10:40:09 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-11 10:40:48 - INFO - El programa Taxímetro se ha iniciado.
+2026-05-11 10:41:06 - INFO - Tarifas actualizadas: Parado=0.1, Movimiento=0.1
+2026-05-11 10:41:07 - INFO - Usuario seleccionó Iniciar Viaje.
+2026-05-11 10:41:11 - INFO - Cambio de estado a: MOVIMIENTO
+2026-05-11 10:41:18 - INFO - Viaje terminado satisfactoriamente. Total: 0.41
+2026-05-11 10:41:18 - INFO - Historial actualizado con un total de 0.41€
+2026-05-13 11:21:28 - INFO - El programa Taxímetro se ha iniciado.

@@ -1,0 +1,142 @@
+
+        :root {
+            --purple-main: #8a3ffc;
+            --purple-dark: #6929c4;
+            --bg-dashboard: #f4f7fe; /* Fondo claro del dashboard */
+            --glass-black: rgba(20, 20, 20, 0.85); /* Negro difuminado */
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-dashboard);
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* --- SIDEBAR MORADA --- */
+        .sidebar {
+            width: 260px;
+            background-color: var(--purple-main);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0;
+            border-radius: 0 35px 35px 0;
+            box-shadow: 10px 0 30px rgba(0,0,0,0.05);
+        }
+
+        .logo { text-align: center; font-weight: bold; font-size: 1.5rem; margin-bottom: 40px; }
+
+        .nav-item {
+            padding: 15px 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .nav-item:hover, .nav-item.active { background: rgba(255, 255, 255, 0.15); font-weight: bold; }
+        .nav-item i { margin-right: 15px; width: 20px; }
+
+        /* --- ÁREA DE TRABAJO --- */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- EL TAXÍMETRO (Negro Difuminado) --- */
+        .taximetro-core {
+            background: var(--glass-black);
+            backdrop-filter: blur(15px); /* Efecto difuminado */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            padding: 40px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        .display-screen {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            padding: 50px;
+            text-align: center;
+            border: 2px solid var(--purple-main);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .fare-amount {
+            color: #00ff88; /* Verde neón digital */
+            font-family: 'Courier New', monospace;
+            font-size: 5rem;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        /* Botones que combinan con el Dashboard */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn-tgt {
+            padding: 20px;
+            border: none;
+            border-radius: 18px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-start { background: var(--purple-main); }
+        .btn-pause { background: rgba(255, 255, 255, 0.1); border: 1px solid var(--white); }
+        .btn-stop { background: #ff3b30; }
+
+        .btn-tgt:hover { transform: scale(1.03); filter: brightness(1.1); }
+
+        /* --- HISTORIAL INFERIOR --- */
+        .history-section {
+            background: white;
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .history-table th { text-align: left; color: #888; font-size: 0.8rem; padding-bottom: 10px; }
+        .history-table td { padding: 12px 0; border-top: 1px solid #f0f0f0; font-size: 0.9rem; }
+
+    
