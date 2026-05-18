@@ -1,26 +1,35 @@
-import unittest
-# Importamos la función con su nuevo nombre desde taximetrov1.py
-from taximetrov1 import calculate_fare 
+import flet as ft
 
-class TestCalculateFare(unittest.TestCase):
+def main(page: ft.Page):
+    #  Configuración de la ventana 
+    page.title = "TAXIGOTECH - Inicio"
+    page.window_width = 400
+    page.window_height = 300
+    page.bgcolor = "#121212" # Tu color negro de fondo
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    #  Elementos visuales (Widgets)
+    texto_bienvenida = ft.Text("Bienvenido al Sistema", size=20, color="#8a3ffc")
     
-    # --- TEST 1: Probar solo tiempo parado (stopped) ---
-    def test_only_stopped(self):
-        # 10 segundos * 0.02 = 0.20
-        result = calculate_fare(10, 0)
-        self.assertEqual(result, 0.20)
+    #  Acción al pulsar el botón
+    def saludar(e):
+        texto_bienvenida.value = "¡Acceso Iniciado!"
+        texto_bienvenida.color = "#00ff88" 
+        page.update() 
 
-    # --- TEST 2: Probar solo tiempo en movimiento (moving) ---
-    def test_only_moving(self):
-        # 10 segundos * 0.05 = 0.50
-        result = calculate_fare(0, 10)
-        self.assertEqual(result, 0.50)
+    btn_entrar = ft.ElevatedButton(
+        text="Entrar", 
+        on_click=saludar,
+        bgcolor="#8a3ffc",
+        color="white"
+    )
 
-    # --- TEST 3: Probar ambos combinados (combined) ---
-    def test_combined_fare(self):
-        # (10 * 0.02) + (10 * 0.05) = 0.20 + 0.50 = 0.70
-        result = calculate_fare(10, 10)
-        self.assertEqual(result, 0.70)
+    #  Añadir todo a la página
+    page.add(
+        texto_bienvenida,
+        btn_entrar
+    )
 
-if __name__ == '__main__':
-    unittest.main()
+#  Ejecutar la aplicación
+ft.app(target=main)
