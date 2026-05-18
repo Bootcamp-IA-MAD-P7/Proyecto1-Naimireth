@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAXIGOTECH - Dashboard</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Ruta actualizada a tu carpeta static -->
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">TAXIGOTECH</div>
+        <div class="nav-links">
+            <div class="nav-item active"><i class="fas fa-stopwatch"></i> Taxímetro</div>
+           <li class="nav-item" onclick="abrirModalTarifas()"><i class="fas fa-coins"></i> Tarifas (Ajustes)</li>
+ 
+            <a href="/logout" style="text-decoration: none; color: inherit;">
+                <div class="nav-item">
+                    <i class="fas fa-sign-out-alt"></i> Salir
+                </div>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h2 style="color: var(--purple-dark);">Taximetro</h2>
+            <div style="background: white; padding: 10px 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <span style="font-weight: bold; color: var(--purple-main);">Estado:</span> Disponible
+            </div>
+        </header>
+
+        <section class="taximetro-core">
+            <div class="display-screen">
+                <span style="color: var(--purple-main); letter-spacing: 2px; font-size: 0.8rem; font-weight: bold;">TOTAL A COBRAR</span>
+                <p class="fare-amount" id="displayFare">00.00€</p>
+            </div>
+
+            <div class="controls">
+                <button class="btn-tgt btn-start" onclick="contar()"><i class="fas fa-play"></i> Iniciar Viaje</button>
+                <button class="btn-tgt btn-pause" onclick="pausar()"><i class="fas fa-pause"></i> Pausar </button>
+                <button class="btn-tgt btn-stop" onclick="resetear()"><i class="fas fa-check"></i> Finalizar</button>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <h3 style="margin: 0; color: var(--purple-dark);">Feed Informativo</h3>
+          <div class="p-6 bg-white rounded-3xl shadow-sm">
+  <div class="flex justify-between items-center mb-6">
+    <h3 class="text-lg font-bold text-slate-800 tracking-tight">Ubicación en tiempo real</h3>
+    <div class="flex items-center space-x-2 text-xs text-emerald-600 font-semibold bg-emerald-50 px-2.5 py-1 rounded-full">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span>En vivo</span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    
+    <div class="flex flex-col justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+      <div>
+        <div class="flex items-center space-x-3 mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-red-50 text-xl border border-red-100 shadow-sm">
+            🚨
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-800 text-sm leading-tight">Control de Tránsito</h4>
+            <span class="text-[11px] text-slate-400 font-medium">Hace 5 min</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          <span class="font-semibold text-red-600">Accidente grave</span> en la <span class="font-semibold text-slate-700">M-40, Km 12 (Dir. Norte)</span>. Carril derecho completamente bloqueado. Retención en aumento.
+        </p>
+      </div>
+      <div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-50 text-[11px] font-medium">
+        <span class="text-red-600 bg-red-50 px-2 py-0.5 rounded-md font-bold">+15 min retraso</span>
+        <span class="text-slate-400 flex items-center gap-1">⚠️ 42 conductores avisados</span>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+      <div>
+        <div class="flex items-center space-x-3 mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-50 text-xl border border-amber-100 shadow-sm">
+            🌧️
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-800 text-sm leading-tight">Estado del Clima</h4>
+            <span class="text-[11px] text-slate-400 font-medium">Hace 12 min</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          <span class="font-semibold text-amber-600">Lluvia intensa</span> reportada en las zonas de <span class="font-semibold text-slate-700">Madrid</span>. Calzada extremadamente deslizante.
+        </p>
+      </div>
+      <div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-50 text-[11px] font-medium">
+        <span class="text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md font-bold">Precaución</span>
+        <span class="text-slate-400 flex items-center gap-1">👁️ 1.2k vistas</span>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-between p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+      <div>
+        <div class="flex items-center space-x-3 mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 text-xl border border-blue-100 shadow-sm">
+            📍
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-800 text-sm leading-tight">Movilidad Urbana</h4>
+            <span class="text-[11px] text-slate-400 font-medium">Hace 1 hora</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Cortes de tráfico programados en <span class="font-semibold text-slate-700">Zona Centro / Gran Vía</span> debido a un evento cultural masivo. Vigente hasta las 18:00h.
+        </p>
+      </div>
+      <div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-50 text-[11px] font-medium">
+        <span class="text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md font-bold">Desvíos activos</span>
+        <span class="text-slate-400 flex items-center gap-1">🔄 Actualizado</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+        </section>
+    </main>
+
+    <!-- Se recomienda incluir el script antes de cerrar el body -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="static/js/script.js"></script>
+    <div id="modalTarifas" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; backdrop-filter: blur(3px);">
+    <div style="background: white; padding: 30px; border-radius: 20px; width: 90%; max-width: 350px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.3); font-family: sans-serif;">
+        <h3 style="color: #4A148C; margin-top: 0; font-size: 1.5rem;">Ajustes de Tarifas</h3>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 20px;">Cambia el coste por segundo de tu lógica Python</p>
+        
+        <div style="margin-bottom: 15px; text-align: left;">
+            <label style="font-size: 0.85rem; font-weight: bold; color: #555;">Tarifa Movimiento (€/seg):</label>
+            <input type="number" id="inputMovePrice" step="0.01" value="0.05" style="width: 100%; padding: 12px; margin-top: 5px; border: 2px solid #edf0f5; border-radius: 10px; box-sizing: border-box; font-size: 1rem; outline: none;">
+        </div>
+        
+        <div style="margin-bottom: 25px; text-align: left;">
+            <label style="font-size: 0.85rem; font-weight: bold; color: #555;">Tarifa Parado / Pausa (€/seg):</label>
+            <input type="number" id="inputStopPrice" step="0.01" value="0.02" style="width: 100%; padding: 12px; margin-top: 5px; border: 2px solid #edf0f5; border-radius: 10px; box-sizing: border-box; font-size: 1rem; outline: none;">
+        </div>
+        
+        <button onclick="guardarTarifas()" style="background: #6f42c1; color: white; border: none; padding: 14px; width: 100%; border-radius: 12px; font-weight: bold; font-size: 1rem; cursor: pointer; margin-bottom: 10px;">Guardar Cambios</button>
+        <button onclick="cerrarModalTarifas()" style="background: #edf0f5; color: #333; border: none; padding: 10px; width: 100%; border-radius: 12px; font-weight: bold; cursor: pointer;">Cancelar</button>
+    </div>
+</div>
+</body>
+</html>

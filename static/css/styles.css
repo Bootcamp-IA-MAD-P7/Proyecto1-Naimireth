@@ -1,0 +1,137 @@
+
+:root {
+    --purple-main: #6f42c1;
+    --purple-dark: #492780;
+    --purple-light: #e2d9f3;
+    --bg-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    background-color: var(--bg-color);
+}
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: var(--purple-dark); 
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--purple-light);
+}
+
+.nav-item {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-item i {
+    margin-right: 10px;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: var(--purple-main);
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Taxímetro */
+.taximetro-core {
+    background: #6f42c1;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.display-screen {
+    background: #c3c3c5;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.fare-amount {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+    color: #222;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around; 
+    gap: 10px;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.btn-tgt {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-start { background-color: #492780; color: white; }
+.btn-pause { background-color: #ffc107; color: #212529; }
+.btn-stop { background-color: #dc3545; color: white; }
+
+.btn-tgt:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* actualizaciones */
+.history-section {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.history-table th, .history-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.history-table th {
+    color: #666;
+    font-size: 0.9rem;
+}

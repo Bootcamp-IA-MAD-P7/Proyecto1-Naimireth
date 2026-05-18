@@ -3,36 +3,35 @@ import logging
 
 # Logs del programa 
 logging.basicConfig(
-    filename="taximetro.log", # El nombre del archivo donde se guardarán los logs
-    level=logging.INFO,       # Nivel Info para registrar eventos importantes
-    format="%(asctime)s - %(levelname)s - %(message)s", # Formato del mensaje de log
-    datefmt="%Y-%m-%d %H:%M:%S" # Formato de fecha y hora en los logs
+    filename="taximetro.log", 
+    level=logging.INFO,       # Nivel: para registrar 
+    format="%(asctime)s - %(levelname)s - %(message)s", # Formato 
+    datefmt="%Y-%m-%d %H:%M:%S" 
 ) 
 
 def authenticate():
-    password_correct = "admin123" 
+    password_correct = "admin123" #Contraseña fija para el ejemplo
     attempts = 3  # Número de oportunidades
     
-    print("\n🔒 SEGURIDAD: Acceso restringido.")
+    print("\n SEGURIDAD: Acceso restringido.")
     
     while attempts > 0:
         entry = input(f"Ingrese la contraseña de conductor (Intentos restantes: {attempts}): ")
         
         if entry == password_correct:
-            print("✅ Acceso concedido. Cargando sistema...")
+            print("Acceso concedido. Cargando sistema...")
             logging.info("Autenticación exitosa.")
             return True
         else:
             attempts -= 1
-            print("❌ Contraseña incorrecta.")
+            print("Contraseña incorrecta.")
             logging.warning(f"Intento de acceso fallido. Intentos restantes: {attempts}")
             
-    print("🚫 Acceso bloqueado. Demasiados intentos fallidos.")
+    print("Acceso bloqueado. Demasiados intentos fallidos.")
     return False
 
 class Taximeter:
     def __init__(self):
-        # Atributos iniciales (Lo que el taxímetro "sabe")
         self.stop_price = 0.02
         self.move_price = 0.05
         self.stopped_seconds = 0
@@ -45,9 +44,9 @@ class Taximeter:
             self.stop_price = float(input("Ingrese el nuevo precio por segundo PARADO: "))
             self.move_price = float(input("Ingrese el nuevo precio por segundo en MOVIMIENTO:"))
             logging.info(f"Tarifas actualizadas: Parado={self.stop_price}, Movimiento={self.move_price}")
-            print("✅ Tarifas actualizadas correctamente.")
+            print("Tarifas actualizadas correctamente.")
         except ValueError:
-            print("❌ Entrada inválida. Manteniendo tarifas anteriores.")
+            print("Entrada inválida. Manteniendo tarifas anteriores.")
 
     def calculate_fare(self):
         # Calcula la tarifa usando los segundos guardados en el objeto
@@ -86,7 +85,7 @@ class Taximeter:
                 else:
                     self.moving_seconds += duration
                     
-                print(f"✅ Se han registrado {duration:.2f} segundos automáticamente.")  
+                print(f"Se han registrado {duration:.2f} segundos automáticamente.")  
             
             elif action == "t":
                 print("Viaje terminado. Calculando tarifa total...")
@@ -95,19 +94,19 @@ class Taximeter:
                 
                 logging.info(f"Viaje terminado satisfactoriamente. Total: {total_fare:.2f}")
                 self.save_to_history(total_fare) 
-                print("✅ Registro guardado en el historial.")
+                print("Registro guardado en el historial.")
                 break
             else:
                 logging.warning(f"Intento de acción no válida: {action}")
                 print("Opción no válida. Por favor, ingrese 'P', 'M' o 'T'.")
 
-# --- Lógica de ejecución ---
+# --- Ejecución ---
 
 def main():
 
     if not authenticate():
         return
-    # Creamos la instancia del objeto
+    # Instancia del objeto
     my_taximeter = Taximeter()
     
     print("--- Bienvenido al Taxímetro ---")
